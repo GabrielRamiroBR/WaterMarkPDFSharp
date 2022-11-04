@@ -28,7 +28,7 @@ namespace PdfSharp
         static void Main (string[] args)
         {
             //Creates a pdf doc, a page and the Xgraphics to draw on the page
-            using PdfDocument doc = PdfReader.Open("C:\\Users\\gabmes61\\source\\repos\\TestesPDF\\TestesPDF\\TESTE.pdf");
+            using PdfDocument doc = PdfReader.Open("C:\\Users\\gabmes61\\source\\repos\\TestesPDF\\TestesPDF\\TEST.pdf");
             var page = doc.Pages[0];
             var graphics = PdfSharp.Drawing.XGraphics.FromPdfPage(page, XGraphicsPdfPageOptions.Prepend);
             XImage image = XImage.FromFile("C:\\Users\\gabmes61\\source\\repos\\TestesPDF\\TestesPDF\\ComosLogo.png");
@@ -38,7 +38,9 @@ namespace PdfSharp
 
             //Line of code to avoid a NotSupportedException to be thrown when saviung the doc
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            doc.Save("arquivoTeste.pdf");
+            doc.Save("testFileWatermark.pdf");
+
+            //modificar para ler carregar várias páginas
  
         }
     }
